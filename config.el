@@ -81,3 +81,5 @@
 (map! :leader
       :desc "FuZzily find file in this Dir"
       "f z d" (cmd!! #'affe-find))
+
+(setq avy-all-windows 'all-frames)
