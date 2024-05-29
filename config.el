@@ -83,3 +83,6 @@
       "f z d" (cmd!! #'affe-find))
 
 (setq avy-all-windows 'all-frames)
+
+(vline-global-mode 1)
+(set-face-background 'vline "#5a5a5a")
