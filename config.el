@@ -85,4 +85,5 @@
 (setq avy-all-windows 'all-frames)
 
 (vline-global-mode 1)
-(set-face-background 'vline "#5a5a5a")
+(after! vline
+  (set-face-background 'vline "#5a5a5a"))
