@@ -84,6 +84,10 @@
 
 (setq avy-all-windows 'all-frames)
 
-(vline-global-mode 1)
+;; (vline-global-mode 1)
 (after! vline
   (set-face-background 'vline "#5a5a5a"))
+
+(after! org
+  (setq org-mobile-directory "~/Library/Mobile Documents/iCloud~com~mobileorg~mobileorg/Documents")
+)
