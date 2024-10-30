@@ -54,3 +54,8 @@
 
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
+
+(package! kubernetes)
+(package! kubectx-mode)
+(package! kubernetes-evil)
+(package! kubernetes-helm)
