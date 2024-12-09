@@ -1,3 +1,6 @@
+# for vterm compilation
+sudo apt install cmake libtool libtool-bin
+
 cd ~/.config/doom
 
 git init
