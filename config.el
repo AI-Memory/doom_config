@@ -109,3 +109,6 @@
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
   (add-to-list 'copilot-indentation-alist '(closure-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2)))
+
+(after! which-key
+  (setq which-key-use-C-h-commands t))
