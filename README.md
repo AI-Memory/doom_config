@@ -13,3 +13,4 @@ git pull
 
 git checkout main -f
 
+export GPG_TTY=$(tty)
