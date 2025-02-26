@@ -59,3 +59,5 @@
 (package! kubectx-mode)
 (package! kubernetes-evil)
 (package! kubernetes-helm)
+
+(package! pinentry)

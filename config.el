@@ -112,3 +112,10 @@
 
 (after! which-key
   (setq which-key-use-C-h-commands t))
+
+(after! epg
+  (setq epg-pinentry-mode 'loopback))
+
+(after! pinentry
+  (pinentry-start))
+
