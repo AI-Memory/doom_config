@@ -90,7 +90,7 @@
 
 (after! org
   (setq org-mobile-directory "~/Library/Mobile Documents/iCloud~com~mobileorg~mobileorg/Documents")
-)
+  )
 
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
@@ -105,6 +105,7 @@
 
   :config
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+  (add-to-list 'copilot-indentation-alist '(coq-mode 2))
   (add-to-list 'copilot-indentation-alist '(org-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
   (add-to-list 'copilot-indentation-alist '(closure-mode 2))
