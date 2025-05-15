@@ -92,6 +92,11 @@
   (setq org-mobile-directory "~/Library/Mobile Documents/iCloud~com~mobileorg~mobileorg/Documents")
   )
 
+(use-package! evil-escape
+  :config
+  (setq-default evil-escape-key-sequence "jkl")
+  (evil-escape-mode))
+
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
   :hook (prog-mode . copilot-mode)

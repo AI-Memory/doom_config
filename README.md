@@ -18,5 +18,7 @@ export GPG_TTY=$(tty)
 rm .emacs.d
 
 # install the following servers in elisp
-copilot servrer
+
+copilot server
+
 lsp server
