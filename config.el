@@ -75,6 +75,17 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq-default
+ delete-by-moving-to-trash t)
+
+(setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
+      evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
+      auto-save-default t                         ; Nobody likes to loose work, I certainly don't
+      truncate-string-ellipsis "…"                ; Unicode ellispis are nicer than "...", and also save /precious/ space
+      password-cache-expiry nil                   ; I can trust my computers ... can't I?
+      ;; scroll-preserve-screen-position 'always     ; Don't have `point' jump around
+      scroll-margin 2)                            ; It's nice to maintain a little margin
+
 (map! :leader
       :desc "FuZzily find File in home"
       "f z f" (cmd!! #'affe-find "~/"))
@@ -121,6 +132,16 @@
     ;;(kbd "<tab>") 'evil-jump-item)
     ))
 
+;; better terminal toggling
+(after! vterm
+  (set-popup-rule! "*doom:vterm-popup:*" :size 0.6 :vslot -4 :select t :quit nil :ttl 0))
+(map! "<f8>" #'+vterm/toggle
+      (:map vterm-mode-map
+       :nvmi "<f8>" #'+vterm/toggle))
+
+(after! projectile
+  (setq projectile-sort-order 'recently-active))
+
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
@@ -149,3 +170,4 @@
 (after! pinentry
   (pinentry-start))
 
+(setq magit-diff-refine-hunk (quote all))
