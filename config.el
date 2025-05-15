@@ -97,6 +97,30 @@
   (setq-default evil-escape-key-sequence "jkl")
   (evil-escape-mode))
 
+(use-package! git-link
+  :config
+  (setq git-link-open-in-browser t
+        git-link-use-commit t))
+
+(use-package! evil-cleverparens
+  :commands evil-cleverparens-mode
+  :init
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
+  (setq evil-cleverparens-complete-parens-in-yanked-region t)
+  :config
+  (map! :textobj "f" #'evil-cp-inner-form #'evil-cp-a-form)
+  (setq evil-cleverparens-use-s-and-S nil)
+  (evil-define-key '(normal visual) evil-cleverparens-mode-map
+    "s" nil
+    "S" nil
+    "{" nil
+    "}" nil
+    "[" nil
+    "]" nil
+    ;;(kbd "<tab>") 'evil-jump-item)
+    ))
+
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
   :hook (prog-mode . copilot-mode)

@@ -61,3 +61,9 @@
 (package! kubernetes-helm)
 
 (package! pinentry)
+
+;; (package! rotate :pin "4e9ac3ff8008     80bd9b705794ef0f7c99d72900a6")
+(package! screenshot)
+(package! evil-cleverparens)
+(package! zprint-mode)
+(package! git-link)
